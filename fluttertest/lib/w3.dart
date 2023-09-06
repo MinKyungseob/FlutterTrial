@@ -1,0 +1,1 @@
+library min_dart;
