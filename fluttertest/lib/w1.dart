@@ -4,7 +4,7 @@ import 'package:lib/study_lib.dart';
 import 'package:fluttertest/minlib.dart';
 import 'dart:math' as math;
 
-  class W1 implements IWidgetTest {
+class W1 implements IWidgetTest {
   @override
   String get authorName=>'minks';
   

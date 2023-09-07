@@ -1,30 +1,36 @@
 library min_dart;
 
 import 'package:fluttertest/minlib.dart';
+import 'package:lib/study_lib.dart';
 
+class T0 implements ITextTest {
+  List<String> args = [];
 
-abstract class ITextTest {
-  String get authorName;
-  List<String> getOutput(Duration elapsed, Duration delta);
-  void setInput(List<String> args);
-}
-
-class T0 implements ITextTest{ 
-  @override
-  // TODO: implement authorName
-  String get authorName => 'minks';
-  
   @override
   List<String> getOutput(Duration elapsed, Duration delta) {
-    // TODO: implement getOutput
-    throw UnimplementedError();
+  List<String> result= [];
+
+  for (String arg in args) {            //List<String> 으로 받을 경우=> 해결 못해서 GPT의 도움 받음.
+      int? number = int.tryParse(arg);
+
+      if (number != null) {
+        for (int i = 1; i <= 9; i++) {                    //for문과 result.add 부분까지는 구상 및 제작하였으나 number에 값을 가져오는 것을 못하여... 흠..
+          result.add('$number * $i = ${number * i}');
+        }
+          result.add(' ');
+      } else {
+        result.add('Invalid input: $arg');
+      }
+    }
+ 
+    return result;
   }
-  
+
+  @override
+  String get authorName => 'minks';
+
   @override
   void setInput(List<String> args) {
+    this.args = args;
   }
-  int num=0;
-  int init=1;
-  
-  
 }
