@@ -10,7 +10,7 @@ class T3 implements ITextTest {                               //주기가 1.5초
   int xcount = Random().nextInt(40);                          //x 시작점 랜덤값 주기. 다른 특정 값을 준다면.. 그값에 따른 변화 없는 것 처럼 보여 재미 down. but y위치는 언제든 중앙을 기준으로 잡음. 약 9.5를 기준으로.
   int ycount = 9;
   int sfcount=0;
-  String bars='-'*40;
+  String bars='_'*40;
   @override
   List<String> getOutput(Duration elapsed, Duration delta) {
     List<String> result= [];
@@ -33,13 +33,13 @@ class T3 implements ITextTest {                               //주기가 1.5초
     if(xcount>0 && xcount <40)              //오른쪽으로 갈때
     {
       barmaking(result, ycount);
-      String chara='${'-'*xcount}K${'-'*(39-xcount)}';          //x값 위치
+      String chara='${'_'*xcount}K${'_'*(39-xcount)}';          //x값 위치
       result[ycount]=chara;
     }
     else if(xcount>=40)                      //왼쪽으로 돌아갈때
     {
       barmaking(result, ycount);
-      String chara='${'-'*(39-xcount%40)}K${'-'*(xcount%40)}';    //x값 위치
+      String chara='${'_'*(39-xcount%40)}K${'_'*(xcount%40)}';    //x값 위치
       result[ycount]=chara;
     }
 
@@ -65,7 +65,7 @@ class T3 implements ITextTest {                               //주기가 1.5초
       {
         continue;
       }
-      result.add('-'*40);
+      result.add('_'*40);
     }
   }
 }
