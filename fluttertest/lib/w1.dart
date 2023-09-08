@@ -11,28 +11,28 @@ class W1 implements IWidgetTest {
   @override
   StatefulWidget createWidget(BuildContext context, Key key)
   {
-    return MyWidgetTestWidget(key: key);
+    return W1MyWidgetTestWidget(key: key);
   }
 }
 
-class MyWidgetTest implements IWidgetTest {
+class W1MyWidgetTest implements IWidgetTest {
   @override
   String get authorName => 'minks';
 
   @override
   StatefulWidget createWidget(BuildContext context, Key key) {
-    return MyWidgetTestWidget(key: key);
+    return W1MyWidgetTestWidget(key: key);
   }
 }
 
-class MyWidgetTestWidget extends StatefulWidget {
-  const MyWidgetTestWidget({super.key});
+class W1MyWidgetTestWidget extends StatefulWidget {
+  const W1MyWidgetTestWidget({super.key});
 
   @override
-  State<MyWidgetTestWidget> createState() => _MyWidgetTestWidgetState();
+  State<W1MyWidgetTestWidget> createState() => _W1MyWidgetTestWidgetState();
 }
 
-class _MyWidgetTestWidgetState extends State<MyWidgetTestWidget>
+class _W1MyWidgetTestWidgetState extends State<W1MyWidgetTestWidget>
 { 
   Color randCol= Color((math.Random().nextDouble()*0xFFFFFF).toInt()).withOpacity(1.0); 
   Duration elapsed = Duration.zero;
@@ -56,7 +56,7 @@ class _MyWidgetTestWidgetState extends State<MyWidgetTestWidget>
         height: 100,
         decoration: BoxDecoration(
           color: randCol,
-          borderRadius: BorderRadius.circular(45)
+          borderRadius: BorderRadius.circular(17)       //20을 넘어가면 거의 캡슐모양으로.. 25이상은 완전 캡슐
         ),
         child: GestureDetector(
           onTap: () {

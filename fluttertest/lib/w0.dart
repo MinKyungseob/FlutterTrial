@@ -1,7 +1,7 @@
 library min_dart;
 
 import 'package:lib/study_lib.dart';
-import 'package:fluttertest/minlib.dart';
+import 'package:flutter/material.dart';
 
 class W0 implements IWidgetTest {
   @override
@@ -10,28 +10,28 @@ class W0 implements IWidgetTest {
   @override
   StatefulWidget createWidget(BuildContext context, Key key)
   {
-    return MyWidgetTestWidget(key: key);
+    return W0MyWidgetTestWidget(key: key);
   }
 }
 
-class MyWidgetTest implements IWidgetTest {
+class W0MyWidgetTest implements IWidgetTest {
   @override
   String get authorName => 'minks';
 
   @override
   StatefulWidget createWidget(BuildContext context, Key key) {
-    return MyWidgetTestWidget(key: key);
+    return W0MyWidgetTestWidget(key: key);
   }
 }
 
-class MyWidgetTestWidget extends StatefulWidget {
-  const MyWidgetTestWidget({super.key});
+class W0MyWidgetTestWidget extends StatefulWidget {
+  const W0MyWidgetTestWidget({super.key});
 
   @override
-  State<MyWidgetTestWidget> createState() => _MyWidgetTestWidgetState();
+  State<W0MyWidgetTestWidget> createState() => _W0MyWidgetTestWidgetState();
 }
 
-class _MyWidgetTestWidgetState extends State<MyWidgetTestWidget>
+class _W0MyWidgetTestWidgetState extends State<W0MyWidgetTestWidget>
     implements ITickerState {
   Duration elapsed = Duration.zero;
 
