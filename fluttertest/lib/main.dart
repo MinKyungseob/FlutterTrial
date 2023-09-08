@@ -5,5 +5,5 @@ import 'package:lib/study_lib.dart';
 void main() {
 	//runWidgetTest(W1());
   //runTextTest( Sample() );
-  runTextTest( T3() );
+  runTextTest( T4() );
 }
