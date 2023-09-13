@@ -1,6 +1,5 @@
 library min_dart;
 
-import 'package:fluttertest/minlib.dart';
 import 'package:lib/study_lib.dart';
 
 class T0 implements ITextTest {

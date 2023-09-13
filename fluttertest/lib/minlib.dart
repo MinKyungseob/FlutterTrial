@@ -14,6 +14,8 @@ export 't1.dart';
 export 't2.dart';
 export 't3.dart';
 export 't4.dart';
+export 't5.dart';
+export 't6.dart';
 
 /*Widget Problems*/
 

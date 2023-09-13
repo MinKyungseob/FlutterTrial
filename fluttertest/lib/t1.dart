@@ -1,8 +1,6 @@
 library min_dart;
 
-import 'package:fluttertest/minlib.dart';
 import 'package:lib/study_lib.dart';
-import 'package:characters/characters.dart';
 
 class T1 extends ITextTest {
   List<String> args = [];

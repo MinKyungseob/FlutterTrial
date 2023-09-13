@@ -2,7 +2,6 @@ library min_dart;
 
 import 'package:lib/study_lib.dart';
 import 'package:fluttertest/minlib.dart';
-import 'dart:math' as math;
 
 class W2 implements IWidgetTest {
   @override
@@ -68,36 +67,35 @@ class _W2MyWidgetTestWidgetState extends State<W2MyWidgetTestWidget>
               color: Colors.blue.shade900,
               size: 60,
             ),
-              const Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                Padding(
-                  padding:EdgeInsets.fromLTRB(30, 10, 0, 0),              
-                ),
-                  Text(
-                    "갱습이",
-                    textAlign: TextAlign.left,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Colors.amber,
-                      fontSize: 20,
-                      ) ,
-                  ),
-                  Text(
-                    "냐옹이는 귀여워",
-                    textAlign: TextAlign.left,
-                  ),
-                ],
+            const Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+              Padding(
+                padding:EdgeInsets.fromLTRB(30, 10, 0, 0),              
               ),
-              //CrossAxisAlignment:
-              Align(
-                alignment: Alignment.centerRight,
-                child: Icon(
+                Text(
+                  "갱습이",
+                  textAlign: TextAlign.left,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Colors.amber,
+                    fontSize: 20,
+                  ) ,
+                ),
+                Text(
+                  "냐옹이는 귀여워",
+                  textAlign: TextAlign.left,
+                ),
+              ],
+            ),
+            Align(
+              alignment: Alignment.centerRight,
+                child:Icon(
                 Icons.arrow_forward_rounded,
                 color: Colors.blue.shade900,
                 size: 30,
               ),
-            ),
+            )
           ]
         )
       ),
