@@ -9,6 +9,7 @@ class T2 implements ITextTest {
   int timecount=0;
   String bars='-'*40;
   String chara='${'-'*20}K${'-'*19}';
+  int fps= 4;
   @override
   List<String> getOutput(Duration elapsed, Duration delta) {
     List<String> result= [];
@@ -16,7 +17,7 @@ class T2 implements ITextTest {
     {
       result.add('-'*40);
     }
-    if(elapsed.inMilliseconds/25>timecount)
+    if(elapsed.inMilliseconds/(1000/fps)>timecount)
     {
       timecount++;
       count=count%40;

@@ -16,28 +16,26 @@ import 'package:http/http.dart' as http;
 import 'package:lib/study_lib.dart';
 
 var client = http.Client();
-
 class T5 implements ITextTest {
   List<String> args = [];
+  var asciiImage;
 
   @override
   List<String> getOutput(Duration elapsed, Duration delta) {
     var url= Uri.https('examples.com');   //initialize
-    var response= http.get(url);
     for (String arg in args) {
         String? number = arg;
 
         if (number != null) {
           url= Uri.parse(args.first);      //입력된 첫번째 url 만이 실행되게끔 제작.
-            //img.Image? decodeWebP(http.readBytes(url));
-
-          //response = fetchData(3);
-          //response = http.get(url);
+          //fetchData(3);
         }
       }
 
     return [
       url.toString(),
+      if(asciiImage!=null) asciiImage,
+      //fetchData(3),
     ];
   }
 
@@ -55,40 +53,28 @@ class T5 implements ITextTest {
     image=await decodeImageFromList(response.bytes);
   }
 
-  fetchData(int id) async{
+  fetchData(int id) async{  
     var uri = Uri.parse(args.first.toString());
     http.Response response = await http.get(uri);
-    //print(response.request);
-    //print(response.statusCode);
-    //print(response.body);
-    loadImage(args);
-    return response;
-  }
+    var databytes= response.bodyBytes;
+    'bytes: $databytes'.ilog();
+    var news= img.decodeImage(databytes)!;
+    //final image=img.Image.fromBytes(databytes);
+    'bytes: ${img.decodeImage(databytes)}'.ilog();
+    img.decodeWebP(databytes);
+    'bytes: ${img.decodeWebP(databytes)}'.ilog();
+    img.WebPDecoder(databytes);
+    'bytes: ${img.WebPDecoder(databytes)}'.ilog();
+    img.grayscale(news);
+    asciiImage=art.convertImage(news,maxWidth: 60,maxHeight: 60,invert: true);
+    'asciicode'.ilog();
+    asciiImage.ilog();
 
-  loadImage(List<String> args) async{
-    var path= args.first;
-    var dir = Directory(path);
-    var files = dir.listSync();
-    late List<int> trimRect;
-    for(final f in files){
-      if( f is !File)
-      {
-        continue;
-      }
-      final bytes = f.readAsBytesSync();
-      final image = img.decodeImage(bytes);
-      if (image == null) {
-        continue;
-      }
-      if (trimRect == null) {
-        trimRect = img.findTrim(image, mode: img.TrimMode.transparent);
-      }
-      final trimmed = img.copyCrop(image, x: trimRect[0], y: trimRect[1], 
-                              width: trimRect[2], height: trimRect[3]);
 
-      String name = f.uri.pathSegments.last;
-      img.encodeImageFile('$path/trimmed-$name', trimmed);
-      print('$path/trimmed-$name');
-    }
+    // await (img.Command()
+    //   ..decodeWebP(databytes)
+    //   ..copyResize(width: 60, height: 60)
+    //   ..writeToFile('C:\Users\양호식\Desktop\FlutterTest\fluttertest\lib\test.png'))
+    // .executeThread();
   }
 }

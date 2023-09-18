@@ -13,7 +13,9 @@ class T6 implements ITextTest, IKeyListenable {
   int count = 0;
   int timecount=0;
   int x=0, y=0;
+  int fps= 8;
   List<String> charAni=['o', 'O', '0', 'O', 'o'];
+  //List<String> charAni=['1', '2', '3', '4', '5', '6', '7','8'];
 
   @override
   List<String> getOutput(Duration elapsed, Duration delta) {
@@ -22,15 +24,17 @@ class T6 implements ITextTest, IKeyListenable {
     {
       result.add('_'*40);
     }
-    if(elapsed.inMilliseconds/(1000/8)>timecount)
+    if(elapsed.inMilliseconds/(1000/fps)>timecount)
     {
       timecount++;
       count=count%40;
       count++;
     }
-    result[y]='_'*x + charAni[timecount%5]+'_'*(39-x);    
+    result[y]='_'*x + charAni[timecount%(charAni.length)]+'_'*(39-x);
         return [
-      ...result,
+          'Elapsed: ${elapsed.inMilliseconds}ms',
+          'Elapsed: ${elapsed.inSeconds}s',
+          ...result,
     ];
   }
 
@@ -56,7 +60,7 @@ class T6 implements ITextTest, IKeyListenable {
   }
 	if( event.logicalKey == LogicalKeyboardKey.keyS)
   {
-    if(y>=20){ 
+    if(y>=19){ 
       y=y;
     }
     else
@@ -72,7 +76,7 @@ class T6 implements ITextTest, IKeyListenable {
   }
 	if( event.logicalKey == LogicalKeyboardKey.keyD)
   {
-    if(x>=40){
+    if(x>=39){
       x=x;
     }
     else
