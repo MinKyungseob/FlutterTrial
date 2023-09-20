@@ -4,35 +4,35 @@ import 'package:lib/study_lib.dart';
 import 'package:fluttertest/minlib.dart';
 import 'dart:math' as math;
 
-class W3 implements IWidgetTest {
+class W7 implements IWidgetTest {
   @override
   String get authorName=>'minks';
   
   @override
   StatefulWidget createWidget(BuildContext context, Key key)
   {
-    return W3MyWidgetTestWidget(key: key);
+    return W7MyWidgetTestWidget(key: key);
   }
 }
 
-class W3MyWidgetTest implements IWidgetTest {
+class W7MyWidgetTest implements IWidgetTest {
   @override
   String get authorName => 'minks';
 
   @override
   StatefulWidget createWidget(BuildContext context, Key key) {
-    return W3MyWidgetTestWidget(key: key);
+    return W7MyWidgetTestWidget(key: key);
   }
 }
 
-class W3MyWidgetTestWidget extends StatefulWidget {
-  const W3MyWidgetTestWidget({super.key});
+class W7MyWidgetTestWidget extends StatefulWidget {
+  const W7MyWidgetTestWidget({super.key});
 
   @override
-  State<W3MyWidgetTestWidget> createState() => _W3MyWidgetTestWidgetState();
+  State<W7MyWidgetTestWidget> createState() => _W7MyWidgetTestWidgetState();
 }
 
-class _W3MyWidgetTestWidgetState extends State<W3MyWidgetTestWidget>
+class _W7MyWidgetTestWidgetState extends State<W7MyWidgetTestWidget>
 { 
   Color randCol= Color((math.Random().nextDouble()*0xFFFFFF).toInt()).withOpacity(1.0); 
   Duration elapsed = Duration.zero;

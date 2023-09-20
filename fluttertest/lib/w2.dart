@@ -88,16 +88,18 @@ class _W2MyWidgetTestWidgetState extends State<W2MyWidgetTestWidget>
                 ),
               ],
             ),
-            Align(
-              alignment: Alignment.centerRight,
+            Expanded(
+              child: Align(
+              alignment: const Alignment(0.95,0),
                 child:Icon(
                 Icons.arrow_forward_rounded,
                 color: Colors.blue.shade900,
                 size: 30,
               ),
-            )
-          ]
-        )
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

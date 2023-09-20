@@ -9,7 +9,7 @@ class T4 implements ITextTest {
 
   @override
   List<String> getOutput(Duration elapsed, Duration delta) {
-    sorted=args.toList();
+    sorted=args;
     sorted.sort();                                          //일반적으로 sort를 사용하는 다른 언어처럼 ㄱ,ㄴ,ㄷ 순의 문자상의 오름차순으로 정렬
     sorted.sort((a,b)=>a.length.compareTo(b.length));       //https://api.flutter.dev/flutter/dart-core/List/sort.html 참조. 참고. 글자 길이별로 정렬.
                                                             //참고로 이론상 위의 두개의 순서를 바꾸면, 다른 결과가 나올 것으로 예상. 

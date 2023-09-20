@@ -3,7 +3,7 @@ import 'package:fluttertest/minlib.dart';
 import 'package:lib/study_lib.dart';
 
 void main() {
-	//runWidgetTest(W2());
+	runWidgetTest(W4());
   //runTextTest( Sample() );
-  runTextTest( T5() );
+  //runTextTest( T42() );
 }
